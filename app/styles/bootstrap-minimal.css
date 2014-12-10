@@ -1,0 +1,118 @@
+.
+
+.btn.btn-minimal {
+  border: none;
+}
+
+.input-group-addon.input-group-addon-minimal {
+  background-color: #fff;
+  border-radius: initial;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: initial;
+  -webkit-box-shadow: initial;
+  -webkit-transition: initial;
+}
+
+.form-control.form-control-minimal {
+  border-radius: initial;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: initial;
+  -webkit-box-shadow: initial;
+  -webkit-transition: initial;
+}
+
+.form-control.form-control-inline {
+  display: inline;
+  width: initial;
+}
+
+/* navbar */
+.navbar-minimal {
+  background-color: transparent;
+  border-color: #E7E7E7;
+  margin-bottom: 0;
+}
+
+/* title */
+.navbar-minimal .navbar-brand {
+  color: #777;
+}
+
+.navbar-minimal .navbar-brand:hover,
+.navbar-minimal .navbar-brand:focus {
+  color: #5E5E5E;
+}
+
+/* link */
+.navbar-minimal .navbar-nav > li > a {
+  color: #777;
+}
+
+.navbar-minimal .navbar-nav > li > a:hover,
+.navbar-minimal .navbar-nav > li > a:focus {
+  color: #333;
+}
+
+.navbar-minimal .navbar-nav > .active > a,
+.navbar-minimal .navbar-nav > .active > a:hover,
+.navbar-minimal .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #E7E7E7;
+}
+
+.navbar-minimal .navbar-nav > .open > a,
+.navbar-minimal .navbar-nav > .open > a:hover,
+.navbar-minimal .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #D5D5D5;
+}
+
+/* caret */
+.navbar-minimal .navbar-nav > .dropdown > a .caret {
+  border-top-color: #777;
+  border-bottom-color: #777;
+}
+.navbar-minimal .navbar-nav > .dropdown > a:hover .caret,
+.navbar-minimal .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #333;
+  border-bottom-color: #333;
+}
+
+.navbar-minimal .navbar-nav > .open > a .caret,
+.navbar-minimal .navbar-nav > .open > a:hover .caret,
+.navbar-minimal .navbar-nav > .open > a:focus .caret {
+  border-top-color: #555;
+  border-bottom-color: #555;
+}
+
+/* mobile version */
+.navbar-minimal .navbar-toggle {
+  border-color: #DDD;
+}
+.navbar-minimal .navbar-toggle:hover,
+.navbar-minimal .navbar-toggle:focus {
+  background-color: #DDD;
+}
+
+.navbar-minimal .navbar-toggle .icon-bar {
+  background-color: #CCC;
+}
+
+@media (max-width: 767px) {
+  .navbar-minimal .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+
+  .navbar-minimal .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-minimal .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+  }
+}
+
+.navbar-minimal.navbar-fixed-top, .navbar-minimal.navbar-fixed-bottom {
+  border-width: 0;
+}

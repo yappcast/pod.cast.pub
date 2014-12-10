@@ -1,0 +1,36 @@
+<header>
+  <section class="navbar navbar-minimal navbar-static-top" role="navigation">
+    <div class="container">
+      <header class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">{{brand}}</a>
+      </header>
+
+      <section class="navbar-collapse collapse">
+        <nav class="nav navbar-nav">
+          <li>
+            <a href="#">Link</a>
+          </li>
+        </nav>
+        {{#if session.isAuthenticated}}
+          <a class="btn btn-default navbar-btn navbar-right" {{action "invalidateSession"}}>
+            Sign Out
+          </a>
+
+          {{#link-to "me" class="btn btn-primary navbar-btn navbar-right"}}
+            Signed in as {{session.account.name}}
+          {{/link-to}}
+        {{else}}
+          {{#link-to "sessions.new" class="btn btn-default navbar-btn navbar-right"}}
+            Sign In
+          {{/link-to}}
+        {{/if}}
+      </section>
+    </div>
+  </section>
+</header>

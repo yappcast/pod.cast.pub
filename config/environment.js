@@ -9,8 +9,9 @@ module.exports = function(environment) {
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
-      }
+        // e.g. "with-controller": true
+      },
+      server_host: process.env.SERVER_HOST
     },
 
     APP: {
@@ -20,10 +21,10 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
+    ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+    ENV.APP.LOG_TRANSITIONS = true;
+    ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
@@ -42,6 +43,23 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-eval' http://maxcdn.bootstrapcdn.com http://cdnjs.cloudflare.com",
+    'font-src': "'self' http://fonts.gstatic.com http://maxcdn.bootstrapcdn.com",
+    'connect-src': "'self' https://api.mixpanel.com " + ENV.EmberENV.server_host,
+    'img-src': "'self'",
+    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://maxcdn.bootstrapcdn.com",
+    'media-src': "'self'"
+  }
+
+  // ENV["simple-auth"] = {
+  //   session: "session:cast-pub",
+  //   authenticator: "authenticator:cast-pub",
+  //   authorizer: "authorizer:cast-pub",
+  //   store: "simple-auth-session-store:local-storage"
+  // }
 
   return ENV;
 };

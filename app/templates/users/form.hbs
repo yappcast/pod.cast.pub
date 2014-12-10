@@ -1,0 +1,56 @@
+<form class="form-horizontal" id="new_account" role="form" {{action "signup" on="submit"}}>
+
+  <p class="text-muted">
+    <small>By clicking "Sign up for PodCastPub", you agree to our <a href="#">terms of service</a> and <a href="#">privacy policy</a>. We will send you account related emails occasionally.</small>
+  </p>
+
+  <section class="form-group">
+    <section class="input-group">
+      <label for="name" class="input-group-addon input-group-addon-minimal">
+        <i class="fa fa-user"></i> Name
+      </label>
+      {{#bootstrap-popover title="Name" icon="user" selector="input" action="focus" placement="left" content="Well use this name for formal communication, like emails or reports."}}
+        {{input value=name id="user_name" class="form-control form-control-minimal" type="text" required="required" placeholder="What is your formal name?"}}
+      {{/bootstrap-popover}}
+    </section>
+  </section>
+  <section class="form-group">
+    <section class="input-group">
+      <label for="username" class="input-group-addon input-group-addon-minimal">
+        <i class="fa fa-at"></i> Email
+      </label>
+      {{#bootstrap-popover title="Email" icon="at" selector="input" action="hover" placement="left" content="We will never sell or give away your email and only use it to send you notifications, unless you opt-in to other uses below."}}
+        {{input value=email id="user_email" class="form-control form-control-minimal" type="email" required="required" placeholder="What email can we use?"}}
+      {{/bootstrap-popover}}
+    </section>
+  </section>
+
+  <section class="form-group">
+    <section class="input-group">
+      <label for="username" class="input-group-addon input-group-addon-minimal">
+        <i class="fa fa-key"></i> Username
+      </label>
+      {{#bootstrap-popover title="Username" icon="key" selector="input" action="focus" placement="left" content="This is a unique identifier for your account that can be referenced by other users in our system."}}
+        {{input value=username id="user_username" class="form-control form-control-minimal" type="text" required="required" placeholder="Whats your unique username?"}}
+      {{/bootstrap-popover}}
+    </section>
+  </section>
+
+  <section class="form-group">
+    <section class="input-group">
+      <label for="password" class="input-group-addon input-group-addon-minimal">
+        <i class="fa fa-lock"></i> Password
+      </label>
+      {{#bootstrap-popover title="Password" icon="lock" selector="input" action="focus" placement="left" content="We store passwords using scrypt and a reasonable workforce amount, meaning your password is reasonably safe. Your password should be only usable for this website."}}
+        {{input value=password id="user_password" class="password form-control form-control-minimal" type="password" required="required" placeholder="What is your password?"}}
+      {{/bootstrap-popover}}
+      <label for="password" class="input-group-addon input-group-addon-minimal">
+        {{view "reveal" selector="#user_password"}}
+      </label>
+    </section>
+  </section>
+
+  <button type="submit" class="btn btn-success btn-block">
+    Join Us
+  </button>
+</form>
