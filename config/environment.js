@@ -49,17 +49,23 @@ module.exports = function(environment) {
     'script-src': "'self' 'unsafe-eval' http://maxcdn.bootstrapcdn.com http://cdnjs.cloudflare.com",
     'font-src': "'self' http://fonts.gstatic.com http://maxcdn.bootstrapcdn.com",
     'connect-src': "'self' https://api.mixpanel.com " + ENV.EmberENV.server_host,
-    'img-src': "'self'",
+    'img-src': "'self'",  
     'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://maxcdn.bootstrapcdn.com",
     'media-src': "'self'"
   }
 
-  // ENV["simple-auth"] = {
-  //   session: "session:cast-pub",
-  //   authenticator: "authenticator:cast-pub",
-  //   authorizer: "authorizer:cast-pub",
-  //   store: "simple-auth-session-store:local-storage"
-  // }
+  ENV["simple-auth"] = {
+      authorizer: 'simple-auth-authorizer:token',
+      crossOriginWhitelist: ['http://localhost:4000']
+  };
+
+  ENV['simple-auth-token'] = {
+    serverTokenEndpoint: 'http://localhost:4000/api/auth',
+    identificationField: 'email',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization',
+  };
 
   return ENV;
 };

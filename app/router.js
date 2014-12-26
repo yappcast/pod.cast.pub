@@ -10,9 +10,7 @@ Router.map(function() {
     this.route("new");
     this.route("show", { path: "/:id" });
   });
-  this.route('sessions', function(){
-    this.route('new');
-  });
+  this.route('login');
 });
 
 export default Router;

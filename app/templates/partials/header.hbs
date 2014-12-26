@@ -22,11 +22,11 @@
             Sign Out
           </a>
 
-          {{#link-to "me" class="btn btn-primary navbar-btn navbar-right"}}
-            Signed in as {{session.account.name}}
+          {{#link-to "podcasts.index" class="btn btn-primary navbar-btn navbar-right"}}
+            Signed in
           {{/link-to}}
         {{else}}
-          {{#link-to "sessions.new" class="btn btn-default navbar-btn navbar-right"}}
+          {{#link-to "login" class="btn btn-default navbar-btn navbar-right"}}
             Sign In
           {{/link-to}}
         {{/if}}
